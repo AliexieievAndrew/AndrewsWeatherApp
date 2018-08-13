@@ -17,13 +17,14 @@ import java.util.List;
  */
 public class WeatherManagement {
 
+    private final static String TAG_WEATHER_MANAGEMENT = "weatherManagement";
     /*
      * Constants for obtaining daytime temperature icons,
      * works only in the case of a clear sky by day or night
      */
-    public static final int SIMPLE_SUNRISE = 1;
-    public static final int SIMPLE_CURRENT_TIME = 2;
-    public static final int SIMPLE_SUNSET = 3;
+    public static final long SIMPLE_SUNRISE = 1534128235 * 1000l;
+    public static final long SIMPLE_CURRENT_TIME = 1534172172562l;
+    public static final long SIMPLE_SUNSET = 1534180826 * 1000l;
 
     /*
      * Return ArrayList<WeatherObject> with parsed info
@@ -56,6 +57,7 @@ public class WeatherManagement {
      */
 
     public final static String getWeatherIcon(Activity activity, int actualId, long sunrise, long sunset, long currentTime) {
+
         int id = actualId / 100;
         String icon = "";
 
@@ -65,7 +67,7 @@ public class WeatherManagement {
              * day or night
              * when weather clean
              */
-            if(currentTime >= sunrise && currentTime < sunset) {
+            if(isDay(sunrise,sunset,currentTime)) {
                 icon = activity.getString(R.string.weather_sunny); // чистое небо днем
             } else {
                 icon = activity.getString(R.string.weather_clear_night); // чистое небо ночью
@@ -164,25 +166,28 @@ public class WeatherManagement {
         return day;
     }
     // in testing
-    private boolean isDay(long timeMillis) {
+    // return true = day
+    // return false = night
+    private static boolean isDay(long sunrise, long sunset, long currentTime) {
 
-        long ms = timeMillis*1000l;
+        Calendar calendarSunrise = Calendar.getInstance();
+        Calendar calendarSunset = Calendar.getInstance();
+        Calendar calendarCurrentTime = Calendar.getInstance();
 
-        Calendar calendarDay = Calendar.getInstance();
-        calendarDay.set(Calendar.HOUR_OF_DAY, 6);
+        calendarSunrise.setTimeInMillis(sunrise);
+        calendarSunset.setTimeInMillis(sunset);
+        calendarCurrentTime.setTimeInMillis(currentTime);
 
-        Calendar calendarNight2 = Calendar.getInstance();
-        calendarNight2.set(Calendar.HOUR_OF_DAY, 22);
+        if (calendarCurrentTime.get(calendarCurrentTime.HOUR_OF_DAY)
+                > calendarSunrise.get(calendarSunrise.HOUR_OF_DAY)
+                &&
+                calendarCurrentTime.get(calendarCurrentTime.HOUR_OF_DAY)
+                        < calendarSunset.get(calendarSunset.HOUR_OF_DAY)) {
 
-        Calendar calendarTemp = Calendar.getInstance();
-        calendarTemp.setTimeInMillis(ms);
-
-        if (calendarTemp.getTimeInMillis() < calendarDay.getTimeInMillis()) {
-            return false;
-        } else
-        if (calendarTemp.getTimeInMillis() < calendarNight2.getTimeInMillis()) {
+            Log.d(TAG_WEATHER_MANAGEMENT, "isDay: true");
             return true;
         } else {
+            Log.d(TAG_WEATHER_MANAGEMENT, "isDay: false");
             return false;
         }
     }

@@ -36,6 +36,7 @@ import comw.example.user.andrewsweatherapp.WeatherManagement;
 
 public class WeatherFragmentMain extends Fragment implements View.OnClickListener{
 
+    private final static String TAG_WEATHER_FRAGMENT_MAIN = "weatherMain";
     // in testing, may be exception (Thread)
     private static long sunset;
     private static long sunrise;
@@ -135,8 +136,13 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
             String updated = df.format(new Date(json.getLong("dt")*1000));
 
             textViewWeatherNowIcon.setText(WeatherManagement.getWeatherIcon(getActivity(),details.getInt("id"),
-                    json.getJSONObject("sys").getLong("sunrise") * 1000,
-                    json.getJSONObject("sys").getLong("sunset") * 1000,new Date().getTime()));
+                    json.getJSONObject("sys").getLong("sunrise") * 1000l,
+                    json.getJSONObject("sys").getLong("sunset") * 1000l ,new Date().getTime()));
+
+            Log.d(TAG_WEATHER_FRAGMENT_MAIN, "parsingWeather: sunrise = "
+                    + json.getJSONObject("sys").getLong("sunrise"));
+            Log.d(TAG_WEATHER_FRAGMENT_MAIN, "parsingWeather: sunset = "
+                    + json.getJSONObject("sys").getLong("sunset"));
 
             sunrise = json.getJSONObject("sys").getLong("sunrise") * 1000l;
             sunset = json.getJSONObject("sys").getLong("sunset") * 1000l;
@@ -164,6 +170,7 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
         }
     }
 
+    // onRestart app when update city
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -173,7 +180,7 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
         }
 
         String cityName = data.getStringExtra("cityName");
-        Log.d("CITY", "city = " + cityName);
+        Log.d(TAG_WEATHER_FRAGMENT_MAIN, "city = " + cityName);
 
         new CitySelected(getActivity()).setCity(cityName);
         
