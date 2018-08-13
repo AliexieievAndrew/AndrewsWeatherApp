@@ -1,0 +1,92 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09C"
+    android:id="@+id/llWidget"
+    android:padding="@dimen/widget_margin"
+    android:orientation="horizontal">
+    <!--#FFFFFF-->
+    <!--#09C-->
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Kyiv"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/textWidgetCity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="3:05"
+            android:textSize="30dp"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/textWidgetTime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:textSize="15dp"
+            android:textColor="@color/colorWhite"
+            android:text="Friday"
+            android:id="@+id/textWidgetweekDay"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="18°"
+                android:id="@+id/textWidgetTemp"
+                android:textSize="30dp"
+
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/textWidgetWeather"
+                android:layout_gravity="center"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"/>
+        </LinearLayout>
+        <TextView
+            android:text="Sunny"
+            android:id="@+id/textWidgetDescription"
+            android:gravity="right"
+            android:textSize="30dp"
+            android:textColor="@color/colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/appwidget_text"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_margin="8dp"-->
+        <!--android:background="#09C"-->
+        <!--android:contentDescription="@string/appwidget_text"-->
+        <!--android:text="@string/appwidget_text"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="24sp"-->
+        <!--android:textStyle="bold|italic" />-->
+</LinearLayout>

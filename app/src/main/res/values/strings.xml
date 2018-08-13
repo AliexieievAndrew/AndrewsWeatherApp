@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Andrews Weather App</string>
+
+    <!--https://openweathermap.org/weather-conditions-->
+    <string name="weather_sunny">&#xf00d;</string>
+    <string name="weather_clear_night">&#xf02e;</string>
+    <string name="weather_foggy">&#xf014;</string>
+    <string name="weather_cloudy">&#xf013;</string>
+    <string name="weather_rainy">&#xf019;</string>
+    <string name="weather_snowy">&#xf01b;</string>
+    <string name="weather_thunder">&#xf01e;</string>
+    <string name="weather_drizzle">&#xf01c;</string>
+
+    <!--Group 2xx: Thunderstorm-->
+    <string name="weather_thunderstorm_with_light_rain">&#xf01d;</string>
+    <string name="weather_thunderstorm_with_rain">&#xf01d;</string>
+    <string name="weather_thunderstorm_with_heavy_rain">&#xf01e;</string>
+    <string name="weather_light_thunderstorm">&#xf01d;</string>
+    <string name="weather_thunderstorm">&#xf01d;</string>
+    <string name="weather_heavy_thunderstorm">&#xf01d;</string>
+    <string name="weather_ragged_thunderstorm">&#xf01d;</string>
+    <string name="weather_thunderstorm_with_light_drizzle">&#xf01d;</string>
+    <string name="weather_thunderstorm_with_drizzle">&#xf01d;</string>
+    <string name="weather_thunderstorm_with_heavy_drizzle">&#xf01e;</string>
+
+    <!--Group 3xx: Drizzle-->
+    <string name="weather_light_intensity_drizzle">&#xf015;</string>
+    <!--<string name="weather_drizzle">&#xf015;</string>-->
+    <string name="weather_heavy_intensity_drizzle"></string>
+    <string name="weather_light_intensity_drizzle_rain"></string>
+    <string name="weather_drizzle_rain"></string>
+    <string name="weather_heavy_intensity_drizzle_rain"></string>
+    <string name="weather_shower_rain_and_drizzle"></string>
+    <string name="weather_heavy_shower_rain_and_drizzle"></string>
+    <string name="weather_shower_drizzle"></string>
+
+
+    <!--Group 5xx: Rain-->
+    <string name="weather_light_rain"></string>
+    <string name="weather_moderate_rain"></string>
+    <string name="weather_heavy_intensity_rain"></string>
+    <string name="weather_very_heavy_rain"></string>
+    <string name="weather_extreme_rain"></string>
+    <string name="weather_freezing_rain"></string>
+    <string name="weather_light_intensity_shower_rain"></string>
+    <string name="weather_shower_rain"></string>
+    <string name="weather_heavy_intensity_shower_rain"></string>
+    <string name="weather_ragged_shower_rain"></string>
+
+    <!--Group 6xx: Snow-->
+    <string name="weather_light_snow"></string>
+    <string name="weather_snow"></string>
+    <string name="weather_heavy_snow"></string>
+    <string name="weather_sleet"></string>
+    <string name="weather_shower_sleet"></string>
+    <string name="weather_light_rain_and_snow"></string>
+    <string name="weather_rain_and_snow"></string>
+    <string name="weather_light_shower_snow"></string>
+    <string name="weather_shower_snow"></string>
+
+
+    <!--Group 7xx: Atmosphere-->
+    <string name="weather_mist"></string>
+    <string name="weather_smoke"></string>
+    <string name="weather_haze"></string>
+    <string name="weather_sand_dust_whirls"></string>
+    <string name="weather_fog"></string>
+    <string name="weather_sand"></string>
+    <string name="weather_dust"></string>
+    <string name="weather_volcanic_ash"></string>
+    <string name="weather_squalls"></string>
+    <string name="weather_tornado"></string>
+
+    <!--Group 80x: Clouds-->
+    <string name="weather_few_clouds"></string>
+    <string name="weather_scattered_clouds"></string>
+    <string name="weather_broken_clouds"></string>
+    <string name="weather_overcast_clouds"></string>
+
+    <string name="button_positive">ok</string>
+    <string name="button_negative">cancel</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="label_widget">widget_weather</string>
+
+
+</resources>
