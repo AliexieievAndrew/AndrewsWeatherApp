@@ -25,6 +25,7 @@ import java.util.Locale;
 import comw.example.user.andrewsweatherapp.Data.CitySelected;
 import comw.example.user.andrewsweatherapp.Geo.ReturnGeoLocationActivity;
 import comw.example.user.andrewsweatherapp.JSON_SharedScreen;
+import comw.example.user.andrewsweatherapp.MainActivity;
 import comw.example.user.andrewsweatherapp.R;
 import comw.example.user.andrewsweatherapp.WeatherApiCenter;
 import comw.example.user.andrewsweatherapp.WeatherManagement;
@@ -37,7 +38,9 @@ import comw.example.user.andrewsweatherapp.WeatherManagement;
 public class WeatherFragmentMain extends Fragment implements View.OnClickListener{
 
     private final static String TAG_WEATHER_FRAGMENT_MAIN = "weatherMain";
+
     // in testing, may be exception (Thread)
+    // getting actual sunset and sunrise
     private static long sunset;
     private static long sunrise;
 
@@ -138,6 +141,11 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
             textViewWeatherNowIcon.setText(WeatherManagement.getWeatherIcon(getActivity(),details.getInt("id"),
                     json.getJSONObject("sys").getLong("sunrise") * 1000l,
                     json.getJSONObject("sys").getLong("sunset") * 1000l ,new Date().getTime()));
+
+            // testing dynamic background
+            MainActivity.setBackgroundApp(WeatherManagement.getWeatherBackground(getActivity(),details.getInt("id"),
+                    json.getJSONObject("sys").getLong("sunrise") * 1000l,
+                    json.getJSONObject("sys").getLong("sunset") * 1000l, new Date().getTime()));
 
             Log.d(TAG_WEATHER_FRAGMENT_MAIN, "parsingWeather: sunrise = "
                     + json.getJSONObject("sys").getLong("sunrise"));

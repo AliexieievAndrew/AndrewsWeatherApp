@@ -51,11 +51,64 @@ public class WeatherManagement {
         }
         return weatherList;
     }
+
+    /*
+     * Return weather background id (int)
+     */
+    public final static int getWeatherBackground(Activity activity, int actualId, long sunrise, long sunset, long currentTime){
+        int id = actualId / 100;
+        int weatherBackground = 0;
+
+        if (actualId == 800){
+            if(isDay(sunrise,sunset,currentTime)) {
+                weatherBackground = R.drawable.background5;
+                Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_clean_day");
+
+            } else {
+                weatherBackground = R.drawable.background5;
+                Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_clean_night");
+            }
+        } else {
+            switch(id) {
+                case 2 :
+                    weatherBackground = R.drawable.background5;
+                    Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_thunder");
+                    break;
+                case 3 :
+                    weatherBackground = R.drawable.background5;
+                    Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_drizzle");
+
+                    break;
+                case 7 :
+                    weatherBackground = R.drawable.background5;
+                    Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_foggy");
+                    break;
+                case 8 :
+                    weatherBackground = R.drawable.background5;
+                    Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_cloudy");
+                    break;
+                case 6 :
+                    weatherBackground = R.drawable.background5;
+                    Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_snowy");
+                    break;
+                case 5 :
+                    weatherBackground = R.drawable.background5;
+                    Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_rainy");
+                    break;
+            }
+        }
+
+        Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground: = " +
+                new String (activity.getResources().getResourceEntryName(weatherBackground)));
+
+        return weatherBackground;
+
+    }
+
     /*
      * Return weather icon (String),
      * needs added assets
      */
-
     public final static String getWeatherIcon(Activity activity, int actualId, long sunrise, long sunset, long currentTime) {
 
         int id = actualId / 100;
@@ -94,7 +147,7 @@ public class WeatherManagement {
                     break;
             }
         }
-        Log.d("TAGTAG", "Icon:  = " + icon + " = ok");
+        Log.d("TAG_WEATHER_MANAGEMENT", "Icon:  = " + icon + " = ok");
         return icon;
     }
 

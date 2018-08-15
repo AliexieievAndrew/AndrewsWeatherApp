@@ -60,7 +60,7 @@ public class RecyclerViewAdapterWeather extends RecyclerView.Adapter<RecyclerVie
         return new ViewHolder(view);
     }
 
-    // связываем
+    // onBind
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
