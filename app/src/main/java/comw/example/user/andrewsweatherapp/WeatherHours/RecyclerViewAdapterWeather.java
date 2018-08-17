@@ -84,6 +84,8 @@ public class RecyclerViewAdapterWeather extends RecyclerView.Adapter<RecyclerVie
 
         Typeface weatherFont = Typeface.createFromAsset(context.getAssets(), "fonts/weather.ttf");
 
+        Typeface descriptionFont = Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Regular.ttf");
+
         TextView textViewWeatherTime;
         TextView textViewWeatherTimeIcon;
         TextView textView_weatherTimeTemp;
@@ -95,7 +97,10 @@ public class RecyclerViewAdapterWeather extends RecyclerView.Adapter<RecyclerVie
             textViewWeatherTime = itemView.findViewById(R.id.textViewWeatherTime);
             textViewWeatherTimeIcon = itemView.findViewById(R.id.textViewWeatherTimeIcon);
             textView_weatherTimeTemp = itemView.findViewById(R.id.textView_weatherTimeTemp);
+
             textViewWeatherTimeIcon.setTypeface(weatherFont);
+            textViewWeatherTime.setTypeface(descriptionFont);
+            textView_weatherTimeTemp.setTypeface(descriptionFont);
         }
     }
     private String getTimeHour(long date) {

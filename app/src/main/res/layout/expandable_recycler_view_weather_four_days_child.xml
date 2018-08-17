@@ -17,31 +17,38 @@
         <TextView
             android:text="00:00"
             android:id="@+id/textChildTime"
+            android:textSize="@dimen/text_size_medium"
             android:padding="10dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:layout_width="0dp"
             android:layout_weight="30"/>
         <TextView
             android:text="broken clouds"
             android:id="@+id/textChildDescription"
+            android:textSize="@dimen/text_size_medium"
             android:layout_height="wrap_content"
             android:gravity="left"
+            android:textColor="@color/colorBlack"
             android:layout_width="0dp"
             android:layout_weight="30"/>
         <TextView
             android:text="**"
             android:id="@+id/textChildWeatherIcon"
-            android:textSize="15dp"
+            android:textSize="@dimen/text_size_medium"
             android:gravity="center"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:layout_width="0dp"
             android:layout_weight="10"/>
         <TextView
             android:text="33"
             android:id="@+id/textChildTemp"
+            android:textSize="@dimen/text_size_medium"
             android:gravity="right"
             android:padding="10dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
             android:layout_width="0dp"
             android:layout_weight="25"/>
     </LinearLayout>

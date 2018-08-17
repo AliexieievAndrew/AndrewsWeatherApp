@@ -27,6 +27,9 @@ public class WeatherExpandableRecyclerViewAdapter extends ExpandableRecyclerAdap
     // assets/font/weather.tiff
     Typeface weatherFont;
 
+    // assets/font/Lato-Regular.ttf
+    Typeface descriptionFont;
+
     Context mContext;
 
     public WeatherExpandableRecyclerViewAdapter(Context context, List<ParentObject> parentItemList) {
@@ -34,6 +37,7 @@ public class WeatherExpandableRecyclerViewAdapter extends ExpandableRecyclerAdap
         mContext = context;
 
         weatherFont = Typeface.createFromAsset(context.getAssets(), "fonts/weather.ttf");
+        descriptionFont = Typeface.createFromAsset(context.getAssets(), "fonts/Lato-Regular.ttf");
         inflater = LayoutInflater.from(context);
     }
 
@@ -55,7 +59,12 @@ public class WeatherExpandableRecyclerViewAdapter extends ExpandableRecyclerAdap
     @Override
     public void onBindParentViewHolder(TitleParentViewHolder titleParentViewHolder, int i, Object o) {
         TitleParent titleParent = (TitleParent) o;
+
         titleParentViewHolder.weatherIcon.setTypeface(weatherFont);
+        titleParentViewHolder.weekDay.setTypeface(descriptionFont);
+        titleParentViewHolder.simpleDate.setTypeface(descriptionFont);
+        titleParentViewHolder.weatherNight.setTypeface(descriptionFont);
+        titleParentViewHolder.weatherDay.setTypeface(descriptionFont);
 
         titleParentViewHolder.weekDay.setText(String.valueOf(titleParent.getWeekDay()));
         titleParentViewHolder.simpleDate.setText(String.valueOf(titleParent.getSimpleDate()));
@@ -64,7 +73,7 @@ public class WeatherExpandableRecyclerViewAdapter extends ExpandableRecyclerAdap
         titleParentViewHolder.weatherDay.setText(String.valueOf(titleParent.getWeatherDay()) + "°");
 
     }
-
+    // set text child
     @Override
     public void onBindChildViewHolder(TitleChildViewHolder titleChildViewHolder, int i, Object o) {
         TitleChild titleChild = (TitleChild) o;

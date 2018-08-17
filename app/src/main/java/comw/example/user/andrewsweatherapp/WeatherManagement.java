@@ -195,25 +195,25 @@ public class WeatherManagement {
         String day = null;
         switch (weekDay) {
             case Calendar.SUNDAY:
-                day = new String("SUNDAY");
+                day = new String("Sunday");
                 break;
             case Calendar.MONDAY:
-                day = new String("MONDAY");
+                day = new String("Monday");
                 break;
             case Calendar.TUESDAY:
-                day = new String("TUESDAY");
+                day = new String("Tuesday");
                 break;
             case Calendar.WEDNESDAY:
-                day = new String("WEDNESDAY");
+                day = new String("Wednesday");
                 break;
             case Calendar.THURSDAY:
-                day = new String("THURSDAY");
+                day = new String("Thursday");
                 break;
             case Calendar.FRIDAY:
-                day = new String("FRIDAY");
+                day = new String("Friday");
                 break;
             case Calendar.SATURDAY:
-                day = new String("SATURDAY");
+                day = new String("Saturday");
                 break;
         }
         return day;

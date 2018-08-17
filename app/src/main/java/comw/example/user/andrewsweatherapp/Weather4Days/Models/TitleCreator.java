@@ -63,9 +63,9 @@ public class TitleCreator {
         }
         return keys;
     }
-    // возвращает температуру
-    // @TIME_DAY день = 15:00
-    // @TIME_NIGHT ночь = 03:00
+    // return temp
+    // @TIME_DAY  = 15:00
+    // @TIME_NIGHT = 03:00
     private static int getWeatherDayOrNight(ArrayList<WeatherObject> dayWeatherList, int timeDay){
         int temp = 0;
         Calendar calendar = Calendar.getInstance();

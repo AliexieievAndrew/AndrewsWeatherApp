@@ -21,19 +21,22 @@
         <TextView
             android:id="@+id/textViewLocation"
             android:layout_gravity="center"
-            android:textSize="30dp"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/textViewWeatherTempNow"
             android:layout_gravity="center"
-            android:textSize="30dp"
+            android:textSize="@dimen/text_size_big"
+            android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/textViewWeatherDescriptionNow"
-            android:textSize="15dp"
+            android:textSize="@dimen/text_size_medium"
             android:layout_gravity="center"
+            android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
