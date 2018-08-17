@@ -47,16 +47,16 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
     // assets/font/weather.tiff
     Typeface weatherFont;
 
+    // assets/font/weather.tiff
+    Typeface descriptionFont;
+
     Handler handler;
 
     TextView textViewLocation;
-    TextView textViewCurrentTime;
     TextView textViewWeatherTempNow;
-    TextView textViewWeatherNowIcon;
     TextView textViewWeatherDescriptionNow;
 
     ImageView imgGeoLocation;
-    ImageView imgEditLocation;
 
     public WeatherFragmentMain() {
         handler = new Handler();
@@ -68,17 +68,16 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
         View mainView = inflater.inflate(R.layout.fragment_weather_main, container,false);
 
         textViewLocation = (TextView) mainView.findViewById(R.id.textViewLocation);
-        textViewCurrentTime = (TextView) mainView.findViewById(R.id.textViewCurrentTime);
         textViewWeatherTempNow = (TextView) mainView.findViewById(R.id.textViewWeatherTempNow);
-        textViewWeatherNowIcon = (TextView) mainView.findViewById(R.id.textViewWeatherTempNowIcon);
         textViewWeatherDescriptionNow = (TextView) mainView.findViewById(R.id.textViewWeatherDescriptionNow);
 
         imgGeoLocation = (ImageView) mainView.findViewById(R.id.imgGeoLocation);
-        imgEditLocation = (ImageView) mainView.findViewById(R.id.imgEditLocation);
 
         imgGeoLocation.setOnClickListener(this);
 
-        textViewWeatherNowIcon.setTypeface(weatherFont);
+        textViewWeatherTempNow.setTypeface(descriptionFont);
+        textViewLocation.setTypeface(descriptionFont);
+        textViewWeatherDescriptionNow.setTypeface(descriptionFont);
 
         return mainView;
     }
@@ -88,6 +87,7 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
         super.onCreate(savedInstanceState);
 
         weatherFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/weather.ttf");
+        descriptionFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Lato-Regular.ttf");
 
         weatherDataUpdate(new CitySelected(getActivity()).getCity());
     }
@@ -124,9 +124,11 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
     // Parsing weather
     private void parsingWeather(JSONObject json) {
         try {
-            textViewLocation.setText(json.getString("name").toUpperCase(Locale.US) +
-                    ", " +
-                    json.getJSONObject("sys").getString("country"));
+//            textViewLocation.setText(json.getString("name").toUpperCase(Locale.US) +
+//                    ", " +
+//                    json.getJSONObject("sys").getString("country"));
+
+            textViewLocation.setText(json.getString("name"));
 
             // get JSONObject.array ("weather" - array, getJSONObject(0) - null array's index)
             JSONObject details = json.getJSONArray("weather").getJSONObject(0);
@@ -137,10 +139,6 @@ public class WeatherFragmentMain extends Fragment implements View.OnClickListene
 
             DateFormat df = DateFormat.getDateTimeInstance();
             String updated = df.format(new Date(json.getLong("dt")*1000));
-
-            textViewWeatherNowIcon.setText(WeatherManagement.getWeatherIcon(getActivity(),details.getInt("id"),
-                    json.getJSONObject("sys").getLong("sunrise") * 1000l,
-                    json.getJSONObject("sys").getLong("sunset") * 1000l ,new Date().getTime()));
 
             // testing dynamic background
             MainActivity.setBackgroundApp(WeatherManagement.getWeatherBackground(getActivity(),details.getInt("id"),

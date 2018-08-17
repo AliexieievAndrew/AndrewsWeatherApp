@@ -6,56 +6,34 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
-        <ImageView
-            android:id="@+id/imgGeoLocation"
-            android:src="@drawable/iconsgeo"
-            android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/textViewLocation"
-            android:textSize="30dp"
-            android:textColor="@color/colorWhite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="@drawable/round_corner"/>
-        <ImageView
-            android:id="@+id/imgEditLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/imgGeoLocation"
+            android:src="@drawable/icon_geo_location"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
         <TextView
-            android:id="@+id/textViewCurrentTime"
+            android:id="@+id/textViewLocation"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/textViewWeatherTempNow"
+            android:layout_gravity="center"
+            android:textSize="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal">
-            <TextView
-                android:id="@+id/textViewWeatherTempNow"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:id="@+id/textViewWeatherTempNowIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
         <TextView
             android:id="@+id/textViewWeatherDescriptionNow"
+            android:textSize="15dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>

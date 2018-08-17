@@ -38,6 +38,7 @@ public class ReturnGeoLocationActivity extends AppCompatActivity {
                 // TODO: Get info about the selected place.
                 latitude = place.getLatLng().latitude;
                 longitude = place.getLatLng().longitude;
+
                 sendCity(getCity());
             }
 
@@ -66,7 +67,7 @@ public class ReturnGeoLocationActivity extends AppCompatActivity {
         String cityName = addresses.get(0).getLocality();
         String countryCode = addresses.get(0).getCountryCode();
 
-        Log.d("GEO_LOG", "getCity(): return  " + cityName + "," + countryCode);
+        Log.d(GEO_LOG, "getCity(): return  " + cityName + "," + countryCode);
 
         return cityName + "," + countryCode;
     }
