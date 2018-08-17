@@ -61,38 +61,38 @@ public class WeatherManagement {
 
         if (actualId == 800){
             if(isDay(sunrise,sunset,currentTime)) {
-                weatherBackground = R.drawable.background5;
+                weatherBackground = R.drawable.weather_clean_day;
                 Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_clean_day");
 
             } else {
-                weatherBackground = R.drawable.background5;
+                weatherBackground = R.drawable.weather_clear_night;
                 Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_clean_night");
             }
         } else {
             switch(id) {
                 case 2 :
-                    weatherBackground = R.drawable.background5;
+                    weatherBackground = R.drawable.weather_thunder;
                     Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_thunder");
                     break;
                 case 3 :
-                    weatherBackground = R.drawable.background5;
+                    weatherBackground = R.drawable.weather_drizzle;
                     Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_drizzle");
 
                     break;
                 case 7 :
-                    weatherBackground = R.drawable.background5;
+                    weatherBackground = R.drawable.weather_smoke;
                     Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_foggy");
                     break;
                 case 8 :
-                    weatherBackground = R.drawable.background5;
+                    weatherBackground = R.drawable.weather_cloudy;
                     Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_cloudy");
                     break;
                 case 6 :
-                    weatherBackground = R.drawable.background5;
+                    weatherBackground = R.drawable.weather_snow;
                     Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_snowy");
                     break;
                 case 5 :
-                    weatherBackground = R.drawable.background5;
+                    weatherBackground = R.drawable.weather_rain;
                     Log.d(TAG_WEATHER_MANAGEMENT, "getWeatherBackground:  = " + "weather_rainy");
                     break;
             }
